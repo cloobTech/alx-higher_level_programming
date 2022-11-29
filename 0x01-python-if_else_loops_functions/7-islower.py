@@ -2,6 +2,6 @@
 
 def islower(c):
     if ord(c) >= 97 and ord(c) <= 122:
-        print("{} is lower".format(c))
+        return True
     else:
-        print("{} is upper".format(c))
+        return False
