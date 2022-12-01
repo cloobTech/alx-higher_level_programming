@@ -6,7 +6,7 @@ if __name__ == "__main__":
     av = sys.argv
     n = len(av)
     for i in range(1, n):
-        if len(av) == 1:
+        if n == 1:
             continue
         add_cl += int(av[i])
     print(add_cl)
