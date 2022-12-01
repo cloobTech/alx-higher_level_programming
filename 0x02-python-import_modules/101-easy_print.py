@@ -1,2 +1,3 @@
 #!/usr/bin/python3
-str("#pythoniscool")
+import logging
+logging.info("#pythoniscool")
