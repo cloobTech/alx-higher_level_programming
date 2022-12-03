@@ -1,6 +1,17 @@
-#!/usr/bin/env python3
-no_c = __import__('5-no_c').no_c
+#!/usr/bin/python3
+print_matrix_integer = __import__('6-print_matrix_integer').print_matrix_integer
 
-print(no_c("Best School"))
-print(no_c("Chicago"))
-print(no_c("C is fun!"))
+matrix = [
+    [1, 2, 3, 5, 7],
+    [1, 2, 3, 5, 7],
+    [1, 2, 3, 5, 7],
+    [1, 2, 3, 5, 7],
+    [7, 8, 9, 8, 4],
+    [7, 8, 9, 8, 4],
+    [4, 5, 6, 5, 7],
+    [1, 2, 3, 5, 7]
+]
+
+print_matrix_integer(matrix)
+print("--")
+print_matrix_integer()
