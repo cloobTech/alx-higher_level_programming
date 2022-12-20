@@ -6,5 +6,8 @@
 class Square:
     """Represent a square."""
     def __init__(self, size):
-        """Private instance attribute: size"""
+        """Private instance attribute: size
+        Args:
+            size (integer): The size of the new square.
+        """
         self.__size = size
