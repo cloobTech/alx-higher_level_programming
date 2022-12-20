@@ -3,9 +3,11 @@ import dis
 
 
 def magic_calculation(a, b):
-    x = 0
-    for i in range(a, b):
+    result = 0
+    for i in range(1, 3):
         try:
             if i > a:
-                return x;
-        except IndexError:
+                raise Exception('Too far')
+        except Exception:
+                result += a ** b / i
+
