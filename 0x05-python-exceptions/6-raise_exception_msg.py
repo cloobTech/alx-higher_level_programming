@@ -3,5 +3,5 @@
 def raise_exception_msg(message=""):
     try:
         2 * boy
-    except:
+    except NameError:
         print("{}".format(message))
