@@ -12,7 +12,7 @@ class Square:
             size (integer): The size of the new square.
             position (integer, integer): Sets the position of a square.
         """
-        self.__size = size
+        self.size = size
         self.position = position
 
     def area(self):
