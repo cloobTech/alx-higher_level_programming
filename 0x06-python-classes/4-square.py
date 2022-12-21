@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 
 """ Write a class Square that defines a square by: (based on 1-square.py)."""
@@ -21,10 +20,12 @@ class Square:
     def area(self):
         """ Return the area of the square """
         return (self.__size * self.__size)
+
     @property
     def size(self):
         """ Getter method to return size """
         return (self.__size)
+
     @size.setter
     def size(self, value):
         """ Setter method to set size """
