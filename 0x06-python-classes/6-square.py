@@ -13,7 +13,7 @@ class Square:
             position (integer, integer): Sets the position of a square.
         """
         self.__size = size
-        self.__position = position
+        self.position = position
 
     def area(self):
         """ Return the area of the square """
