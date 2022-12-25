@@ -35,7 +35,7 @@ class Node:
     def next_node(self, value):
         """ Setter Method to set next node address"""
         if value is not None and not isinstance(value, Node):
-            raise TypeError("next_node must be a node object")
+            raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
 
