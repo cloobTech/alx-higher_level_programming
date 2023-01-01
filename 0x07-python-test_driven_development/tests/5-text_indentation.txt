@@ -1,0 +1,33 @@
+==================================================≠==============================
+HOW TO USE THE text_indentation(text) FUNCTION FROM 5-text_indentation.py
+===========≠=====================================================================
+
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+----------------------------------------------------------------------------------
+
+case 1: Indent a text with "." and "?"...
+
+>>> text = "Hello! How are you today? Okay goodbye."
+>>> text_indentation(text) #doctest: +NORMALIZE_WHITESPACE
+Hello! How are you today?
+<BLANKLINE>
+Okay goodbye.
+<BLANKLINE>
+
+----------------------------------------------------------------------------------
+case 2: White spaces before first line
+>>> text_2 = "    Hey dear: Ayobami"
+>>> text_indentation(text_2) #doctest: +NORMALIZE_WHITESPACE
+Hey dear:
+<BLANKLINE>
+Ayobami
+
+----------------------------------------------------------------------------------
+
+case 3: when None is passed
+>>> text_indentation()
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
