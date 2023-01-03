@@ -83,9 +83,7 @@ class Rectangle:
             rec_str = ""
         else:
             for i in range(self.height):
-                if not isinstance(self.print_symbol, str):
-                    rec_str = rec_str.join(self.print_symbol)
-                rec_str += (self.print_symbol * self.width)
+                rec_str += (str(self.print_symbol) * self.width)
                 if i != (self.height - 1):
                     rec_str += '\n'
         return (rec_str)
