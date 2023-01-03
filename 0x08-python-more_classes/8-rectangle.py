@@ -19,6 +19,7 @@ class Rectangle:
             return (rect_1)
         else:
             return (rect_2)
+
     def __init__(self, width=0, height=0):
         """ Initialize an instance of the class Rectangle.
         Args:
@@ -79,7 +80,7 @@ class Rectangle:
         """ Special method that returns a string from a class"""
         rec_str = ""
         if self.width == 0 or self.height == 0:
-           rec_str = ""
+            rec_str = ""
         else:
             for i in range(self.height):
                 if not isinstance(self.print_symbol, str):
