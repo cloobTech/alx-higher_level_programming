@@ -30,8 +30,9 @@ def matrix_divided(matrix, div):
             if not all(isinstance(i, (int, float)) for i in item):
                 raise TypeError("matrix must be a matrix (list of lists)"
                                 " of integers/floats")
-    if (matrix and div) is None:
-        raise TypeError("matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'")
+    if matrix is None and div is None:
+        raise TypeError("matrix_divided() missing 2 required "
+                        "positional arguments: 'matrix' and 'div'")
     list_len = len(matrix[0])
     for item in matrix:
         if len(item) != list_len:
@@ -40,8 +41,9 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    if div == None:
-        raise TypeError("matrix_divided() missing 1 required positional argument")
+    if div is None:
+        raise TypeError("matrix_divided() missing 1 "
+                        "required positional argument")
 
     for item in matrix:
         item = [round(num/div, 2) for num in item]
