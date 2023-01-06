@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+""" A script containing a simple function that indents a text """
+
 def text_indentation(text=None):
     """ a function that prints a text with 2 new lines
         after each of these characters: ., ? and :
@@ -16,7 +18,7 @@ def text_indentation(text=None):
                 i += 1
                 if (i == len(text) - 1):
                     return
-        if text[i] in ".?:":
+        if text[i] in ".?:" or text[i] == "\n":
             print("{}{}".format(text[i], '\n'))
             if (i == len(text) - 1):
                 return
