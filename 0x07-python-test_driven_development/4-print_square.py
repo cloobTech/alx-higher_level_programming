@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+""" Script containing a simple function to print squares """
+
+
 def print_square(size):
     """a function that prints a square with the character #."""
     if (not isinstance(size, int) or (isinstance(size, float) and size < 0)):
