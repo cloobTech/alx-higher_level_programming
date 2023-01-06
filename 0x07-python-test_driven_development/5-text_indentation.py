@@ -2,6 +2,7 @@
 
 """ A script containing a simple function that indents a text """
 
+
 def text_indentation(text=None):
     """ a function that prints a text with 2 new lines
         after each of these characters: ., ? and :
@@ -12,7 +13,6 @@ def text_indentation(text=None):
         raise TypeError("text must be a string")
     i = 0
     while i < len(text):
-        #delete white spaces at the start of text
         if (text[i] == " " and i == 0):
             while text[i] == " ":
                 i += 1
