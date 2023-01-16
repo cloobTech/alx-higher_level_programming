@@ -40,7 +40,7 @@ class Base:
     def from_json_string(json_string):
         """ Deserialize/decode a json object """
         if json_string is None or len(json_string) <= 0:
-            json_string = []
+            return ([])
         return (json.loads(json_string))
 
     @classmethod
