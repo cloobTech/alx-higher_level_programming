@@ -12,6 +12,3 @@ if __name__ == "__main__":
     print(type(dictionary))
     print(json_dictionary)
     print(type(json_dictionary))
-    empty = Base.to_json_string()
-    print(empty)
-    print(type(empty))

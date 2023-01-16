@@ -34,7 +34,7 @@ class Base:
 
         filename = f"{cls.__name__}.json"
         with open(filename, "w") as json_file:
-            json.dump(dict_arr, json_file)
+            json_file.write(cls.to_json_string(dict_arr))
 
     @staticmethod
     def from_json_string(json_string):
