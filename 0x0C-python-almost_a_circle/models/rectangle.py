@@ -95,7 +95,7 @@ class Rectangle(base.Base):
         """ return a string representation of the class obj """
         str_rep = ""
         str_rep += f"[Rectangle] ({self.id}) {self.x}/{self.y}"
-        " - {self.width}/{self.height}"
+        str_rep += f" - {self.width}/{self.height}"
         return (str_rep)
 
     def update(self, *args, **kwargs):
