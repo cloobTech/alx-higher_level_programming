@@ -86,9 +86,8 @@ class Rectangle(base.Base):
             """ vertical offset """
             print("")
         for i in range(self.height):
-            for hor in range(self.x):
-                """ Horinzontal offset """
-                print(" " * self.x, end="")
+            """ Horinzontal offset """
+            print(" " * self.x, end="")
             print("#" * self.width)
 
     def __str__(self):
