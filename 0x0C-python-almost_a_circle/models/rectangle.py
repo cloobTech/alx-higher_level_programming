@@ -106,8 +106,10 @@ class Rectangle(base.Base):
                 if index == 1:
                     self.width = value
                 if index == 2:
-                    self.x = value
+                    self.height = value
                 if index == 3:
+                    self.x = value
+                if index == 4:
                     self.y = value
         elif len(kwargs) > 0:
             for key, value in kwargs.items():
