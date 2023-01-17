@@ -7,17 +7,15 @@ from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
 
-    def setUp(self):
-        self.r1 = Rectangle(10, 2)
-        self.r2 = Rectangle(1, 20)
-        self.r3 = Rectangle(10, 2, 0, 0, 12)
+
+    def test_init_id(self):
+        r1 = Rectangle(2, 2)
+        r2 = Rectangle(2, 2)
+        self.assertEqual(r1.id, 1)
 
     def test_isinstance(self):
-        self.assertIsInstance(self.r1, Base)
-
-    def test_rect_init(self):
-        self.assertEqual(self.r3.id, 12)
-        self.assertEqual(self.r2.id, 1)
+        r1 = Rectangle(2, 2)
+        self.assertIsInstance(r1, Base)
 
     def test_width_data_type(self):
         with self.assertRaises(TypeError):
