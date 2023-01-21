@@ -397,3 +397,48 @@ class TestBase_load_from_file(unittest.TestCase):
     def test_load_from_file_more_than_one_arg(self):
         with self.assertRaises(TypeError):
             Base.load_from_file([], 1)
+
+class TestBase_save_to_file_csv(unittest.TestCase):
+    """Unittests for testing save_to_file_csv method of Base class."""
+
+    @classmethod
+    def tearDown(self):
+        """Delete any created files."""
+        try:
+            os.remove("Rectangle.csv")
+        except IOError:
+            pass
+        try:
+            os.remove("Square.csv")
+        except IOError:
+            pass
+        try:
+            os.remove("Base.csv")
+        except IOError:
+            pass
+
+    def test_save_to_file_csv_one_rectangle(self):
+        r = Rectangle(10, 7, 2, 8, 5)
+        Rectangle.save_to_file_csv([r])
+        with open("Rectangle.csv", "r") as f:
+            self.assertTrue("5,10,7,2,8", f.read())
+
+    def test_save_to_file_csv_two_rectangles(self):
+        r1 = Rectangle(10, 7, 2, 8, 5)
+        r2 = Rectangle(2, 4, 1, 2, 3)
+        Rectangle.save_to_file_csv([r1, r2])
+        with open("Rectangle.csv", "r") as f:
+            self.assertTrue("5,10,7,2,8\n2,4,1,2,3", f.read())
+
+    def test_save_to_file_csv_one_square(self):
+        s = Square(10, 7, 2, 8)
+        Square.save_to_file_csv([s])
+        with open("Square.csv", "r") as f:
+            self.assertTrue("8,10,7,2", f.read())
+
+    def test_save_to_file_csv_two_squares(self):
+        s1 = Square(10, 7, 2, 8)
+        s2 = Square(8, 1, 2, 3)
+        Square.save_to_file_csv([s1, s2])
+        with open("Square.csv", "r") as f:
+            self.assertTrue("8,10,7,2\n3,8,1,2", f.read())
