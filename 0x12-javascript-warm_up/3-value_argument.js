@@ -1,15 +1,8 @@
 #!/usr/bin/node
 
-argv = process.argv;
-let result = '';
-
-// print process.argv
-argv.forEach((val, index) => {
-  if (index === 1) {
-    result = 'No argument';
-  } else {
-    result = 'Argument found';
-  }
-});
-
-console.log(result);
+const argv = process.argv;
+if (typeof(argv[2]) === 'undefined'){
+  console.log('No argument');
+} else {
+  console.log(argv[2]);
+}
