@@ -1,16 +1,7 @@
 #!/usr/bin/node
 
-let n = (parseInt(process.argv[2]));
+function factorial (n) {
+  return n === 0 || isNaN(n) ? 1 : n * factorial(n - 1);
+}
 
-if (isNaN(n)) n = 1;
-
-const recur = (n) => {
-  if (n === 1) {
-    return 1;
-  } else {
-    return n * recur(n - 1);
-  }
-};
-
-const result = recur(n);
-console.log(result);
+console.log(factorial(Number(process.argv[2])));
