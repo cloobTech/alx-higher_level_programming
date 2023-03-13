@@ -1,0 +1,3 @@
+## 0x12-javascript-warm_up
+
+A quick warm up on Js...
