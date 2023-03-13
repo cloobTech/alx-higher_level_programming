@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-let argv = process.argv
+const argv = process.argv;
 
 // print process.argv
 if (argv.length === 2) {

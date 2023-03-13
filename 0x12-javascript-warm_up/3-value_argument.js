@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-import { argv } from 'node:process';
+argv = process.argv;
 let result = '';
 
 // print process.argv
