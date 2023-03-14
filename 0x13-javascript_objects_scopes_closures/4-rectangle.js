@@ -17,14 +17,14 @@ module.exports = class Rectangle {
   }
 
   rotate () {
-   let tmp = 0;
-   tmp = this.width;
-   this.width = this.height;
-   this.height = tmp;
+    let tmp = 0;
+    tmp = this.width;
+    this.width = this.height;
+    this.height = tmp;
   }
 
   double () {
-  this.width = this.width * 2;
-  this.height = this.height * 2;
+    this.width = this.width * 2;
+    this.height = this.height * 2;
   }
 };
