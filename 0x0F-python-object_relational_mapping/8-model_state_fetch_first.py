@@ -24,7 +24,7 @@ if __name__ == '__main__':
     db = LocalSession()
 
     # first_state for all states and print them
-    first_state = db.query(States).order_by(State.id).first()
+    first_state = db.query(State).order_by(State.id).first()
     if not first_state:
         print('Nothing')
     else:
