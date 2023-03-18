@@ -18,9 +18,9 @@ if __name__ == '__main__':
     engine = create_engine(f'mysql+mysqldb://{username}:{password}@localhost:3306/{db_name}')
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
-    session = Session()
+    db_session = Session()
 
     # query for states that contain letter "a" and print them
-    states_with_a = session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
+    states_with_a = db_session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
     for state in states_with_a:
         print(f"{state.id}: {state.name}")
