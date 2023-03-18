@@ -10,7 +10,7 @@ from sqlalchemy.orm import sessionmaker
 if __name__ == '__main__':
     # check command line arguments
     if len(sys.argv) != 4:
-        print(f"Usage: {sys.argv[0]} <mysql username> <mysql password> <database name>")
+        print(f"Usage: {sys.argv[0]} <mysql username> <mysql password> <database name>", pool_pre_ping=True)
         sys.exit(1)
 
     # connect to database using SQLAlchemy
