@@ -13,7 +13,13 @@ if __name__ == '__main__':
             charset="utf8")
 
     cur = conn.cursor()
-    cur.execute("SELECT * FROM cities ORDER BY id ASC")
+    cur.execute(
+            """
+            SELECT cities.id, cities.name, states.name FROM cities
+            JOIN states ON cities.state_id = states.id
+            ORDER BY id ASC
+            """
+            )
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
