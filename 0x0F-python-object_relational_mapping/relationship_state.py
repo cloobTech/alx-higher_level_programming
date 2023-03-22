@@ -10,4 +10,4 @@ class State(Base):
 
     id: int = Column(Integer, unique=True, primary_key=True, nullable=False)
     name: str = Column(String(128), nullable=False)
-    cities = relationship("City", backref='state', cascade='all, delete-orphan')
+    cities = relationship("City", backref='state', cascade='all, delete')
