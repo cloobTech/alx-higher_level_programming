@@ -6,4 +6,8 @@ import urllib.request
 import sys
 
 
-url_obj = 
+url = sys.argv[1]
+url_obj = urllib.request.Request(url)
+with urllib.request.urlopen(url_obj) as res:
+    res = res.info()
+    print(res.get('X-Request-Id'))
