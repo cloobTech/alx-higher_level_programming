@@ -15,4 +15,4 @@ if __name__ == '__main__':
         with urllib.request.urlopen(url_obj) as res:
             print(res.read().decode('utf-8'))
     except urllib.error.HTTPError as e:
-        print(f'Error code: {e.code()}')
+        print(f'Error code: {e.code}')
