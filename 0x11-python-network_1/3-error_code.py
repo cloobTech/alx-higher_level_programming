@@ -14,5 +14,5 @@ if __name__ == '__main__':
     try:
          urllib.request.urlopen(url_obj)
     except urllib.error.HTTPError as e:
-        print(e.code())
+        print(f'Error code: {e.code()}')
 
