@@ -6,18 +6,19 @@ import requests
 import sys
 
 
-if len(sys.argv) == 2:
-    q = sys.argv[1]
-else:
-    q = ""
-payload = {'q': q}
-url = 'http://0.0.0.0:5000/search_user'
-response = requests.post(url, data=payload)
-try:
-    res_json = response.json()
-    if res_json:
-        print(f'[{res_json.get("id")}] {res_json.get("name")}')
+if __name__ == '__main__':
+    if len(sys.argv) == 2:
+        q = sys.argv[1]
     else:
-        print("No result")
-except ValueError:
-    print("Not a valid JSON")
+        q = ""
+    payload = {'q': q}
+    url = 'http://0.0.0.0:5000/search_user'
+    response = requests.post(url, data=payload)
+    try:
+        res_json = response.json()
+        if res_json:
+            print(f'[{res_json.get("id")}] {res_json.get("name")}')
+        else:
+            print("No result")
+    except ValueError:
+        print("Not a valid JSON")
