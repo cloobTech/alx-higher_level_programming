@@ -13,6 +13,6 @@ if __name__ == '__main__':
     url_obj = urllib.request.Request(url)
     try:
         with urllib.request.urlopen(url_obj) as res:
-            print('Index')
+            print(res.read())
     except urllib.error.HTTPError as e:
         print(f'Error code: {e.code()}')
