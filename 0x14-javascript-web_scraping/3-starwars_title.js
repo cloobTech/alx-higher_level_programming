@@ -8,7 +8,7 @@ request.get(url, (err, res, body) => {
   if (err) {
     console.error(err);
   }
-  if (res === 200) {
+  if (res.statusCode === 200) {
     const data = JSON.parse(body);
     console.log(data.title);
   }
