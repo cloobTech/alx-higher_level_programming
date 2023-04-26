@@ -3,13 +3,25 @@
 const url = process.argv[2];
 const request = require('request');
 
-request.get(url, (error, response, body)=> {
+request.get(url, (error, response, body) => {
   if (error) {
     console.log(error);
-   } else if (response.statusCode === 200) {
-    let data = JSON.parse(body);
+  } else if (response.statusCode === 200) {
+    const data = JSON.parse(body);
 
-    console.log(data);
-   }
+    const tasks = {};
 
-})
+    data.forEach(task => {
+      if (task.completed) {
+        const userId = task.userId;
+        if (userId in tasks) {
+          tasks[userId]++;
+        } else {
+          tasks[userId] = 1;
+        }
+      }
+    });
+
+    console.log(tasks);
+  }
+});
