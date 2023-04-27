@@ -11,10 +11,16 @@ request(url, (err, res, body) => {
     if (res.statusCode === 200) {
       const data = JSON.parse(body);
       const characters = data.characters;
-      characters.forEach(character => {
+      const outputArray = [];
+      const regex = /\<\d+ empty item(s)?\>/;
+      characters.forEach((character, index) => {
         request(character, (err, res, body) => {
           if (!err) {
-            console.log(JSON.parse(body).name);
+            const castName = JSON.parse(body).name;
+            outputArray[index] = castName;
+            if ((outputArray.length === characters.length) && outputArray.every(str => !regex.test(str))) {
+              outputArray.forEach(str => console.log(str));
+            }
           }
         });
       });
